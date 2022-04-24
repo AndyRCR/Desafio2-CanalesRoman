@@ -11,6 +11,7 @@ function App() {
         <ItemListContainer
         image = {cart}
         product = {"Example product"}
+        stock = {parseInt((Math.random() + 1) * 5)}
         price = {30}
         description = {"Descripcion de ejemplo"}
         >

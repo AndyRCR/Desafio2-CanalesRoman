@@ -6,7 +6,7 @@ import './CardWidget.css'
 const CardWidget = () => {
   return (
     <>
-        <a href='#'>
+        <a href='.'>
             <FontAwesomeIcon icon={faShoppingCart} className="carrito"/>
         </a>
     </>
