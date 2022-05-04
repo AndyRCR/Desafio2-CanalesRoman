@@ -1,26 +1,26 @@
 import './ItemListContainer.css'
-
-import React from 'react'
-import ItemCount from '../ItemCount/ItemCount'
+import React, {useState, useEffect} from 'react'
+import ItemList from '../ItemList/ItemList'
 
 const ItemListContainer = (props) => {
+  const [productList, setProductList] = useState(null)
+
+  useEffect(() => {
+    fetch('https://sheet.best/api/sheets/9710fa39-894d-4138-bc44-2863728a31ac')
+    .then(res => res.json())
+    .then(res => setTimeout(()=> setProductList(res), 1500))
+  
+    return () => {
+      
+    }
+  }, [])
+
   return (
     <>
-        <div className='itemContainer'>
-            {/* <div className='buttonContainer'>
-                <button>Add to cart</button>
-            </div> */}
-            <div className='product'>
-                <img src={props.image} alt="" />
-                <div>
-                    <h3>{props.product}</h3>
-                    <h4>S/.{props.price}</h4>
-                    <p className='stock'>(Stock: {props.stock})</p>
-                    <p>{props.description}</p>
-                </div>
-                <ItemCount className = 'itemCount' amount = {props.stock}></ItemCount>
-            </div>
-        </div>
+      <div className='itemListContainer'>
+        <h2>Lista de productos</h2>
+        <ItemList productList={productList} />
+      </div>
     </>
   )
 }
