@@ -7,10 +7,9 @@ const ItemListContainer = (props) => {
   const [productList, setProductList] = useState(null)
 
   useEffect(() => {
-    fetch('https://sheet.best/api/sheets/9710fa39-894d-4138-bc44-2863728a31ac')
+    fetch('https://sheet2api.com/v1/NFwu52CkTzuB/api-desafios-react')
     .then(res => res.json())
     .then(res => setTimeout(()=> setProductList(res), 1500))
-  
     return () => {
       
     }

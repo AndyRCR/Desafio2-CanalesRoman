@@ -1,9 +1,10 @@
 .itemListContainer{
-    margin-top: 68px;
+    margin-top: 55px;
     background-color: #f8f7f5;
     display: flex;
 }
 
 .itemListGeneralContainer{
     width: 100%;
+    z-index: 10;
 }
