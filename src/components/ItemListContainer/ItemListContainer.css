@@ -1,4 +1,9 @@
 .itemListContainer{
-    padding: 30px 50px 50px;
+    margin-top: 68px;
     background-color: #f8f7f5;
+    display: flex;
+}
+
+.itemListGeneralContainer{
+    width: 100%;
 }

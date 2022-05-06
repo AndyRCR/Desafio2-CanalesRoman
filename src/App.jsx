@@ -1,6 +1,6 @@
-import './App.css';
-import NavBar from './components/NavBar/NabBar';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import './App.css'
+import NavBar from './components/NavBar/NabBar'
+import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 
 function App() {
   return (
@@ -8,7 +8,7 @@ function App() {
       <NavBar/>
       <ItemListContainer/>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

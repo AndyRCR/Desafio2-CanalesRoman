@@ -1,6 +1,7 @@
 import './ItemListContainer.css'
 import React, {useState, useEffect} from 'react'
 import ItemList from '../ItemList/ItemList'
+import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer'
 
 const ItemListContainer = (props) => {
   const [productList, setProductList] = useState(null)
@@ -18,8 +19,11 @@ const ItemListContainer = (props) => {
   return (
     <>
       <div className='itemListContainer'>
-        <h2>Lista de productos</h2>
-        <ItemList productList={productList} />
+        <div className='itemListGeneralContainer'>
+          <h2>Lista de productos</h2>
+          <ItemList productList={productList} />
+        </div>
+        <ItemDetailContainer/>
       </div>
     </>
   )
