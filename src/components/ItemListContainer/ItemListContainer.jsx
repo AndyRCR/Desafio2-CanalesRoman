@@ -7,11 +7,15 @@ const ItemListContainer = (props) => {
   const [productList, setProductList] = useState(null)
 
   useEffect(() => {
-    fetch('https://sheet2api.com/v1/NFwu52CkTzuB/api-desafios-react')
-    .then(res => res.json())
-    .then(res => setTimeout(()=> setProductList(res), 1500))
+    setTimeout(()=>{
+      new Promise((eject, reject) =>{
+        fetch('https://sheet2api.com/v1/NFwu52CkTzuB/api-desafios-react')
+        .then(res => res.json())
+        .then(res => setProductList(res))
+      })
+    },2000)
+
     return () => {
-      
     }
   }, [])
 
@@ -22,7 +26,9 @@ const ItemListContainer = (props) => {
           <h2>Lista de productos</h2>
           <ItemList productList={productList} />
         </div>
-        <ItemDetailContainer/>
+        <ItemDetailContainer
+        productList={productList}
+        />
       </div>
     </>
   )

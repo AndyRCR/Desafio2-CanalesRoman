@@ -1,6 +1,5 @@
 import './Item.css'
 import React from 'react'
-import ItemCount from '../ItemCount/ItemCount'
 
 const priceFormat = price =>{
     return price.length > 3 && !price.includes('.') ? price.slice(0,1) + "," + price.slice(1,price.length) : price
@@ -21,7 +20,7 @@ const Item = (props) => {
                     <p className='stock'>(Stock: {props.stock})</p>
                     <p>{props.description}</p>
                 </div>
-                <ItemCount className = 'itemCount' amount = {props.stock}></ItemCount>
+                {/* <ItemCount className = 'itemCount' amount = {props.stock}></ItemCount> */}
                 <button className='detailButton'>Detalles</button>
             </div>
         </div>

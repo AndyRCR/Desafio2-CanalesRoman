@@ -1,5 +1,9 @@
 .itemDetailC{
     background-color: white;
-    width: 35%;
     box-shadow: -5px 0px 15px black;
+}
+
+.itemDetailC img{
+    width: 70%;
+    height: auto;
 }

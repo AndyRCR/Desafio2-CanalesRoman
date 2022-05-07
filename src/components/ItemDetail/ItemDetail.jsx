@@ -2,23 +2,29 @@ import React from 'react'
 import ItemCount from '../ItemCount/ItemCount'
 import './ItemDetail.css'
 
-const ItemDetail = () => {
+const priceFormat = price =>{
+  return price.length > 3 && !price.includes('.') ? price.slice(0,1) + "," + price.slice(1,price.length) : price
+}
+
+const ItemDetail = ({item, customStyle}) => {
 
   return (
-    <div className='itemDetailC'>
-      {/* <div className='buttonContainer'>
-          <button>Add to cart</button>
-      </div> */}
-      <div className='product'>
-          <img src='https://e39a9f00db6c5bc097f9-75bc5dce1d64f93372e7c97ed35869cb.ssl.cf1.rackcdn.com/42701536-IHM2_BsM-medium.jpg'  alt="" />
+    <div className='itemDetailC' style={customStyle}>
+      { item != null ? (
+        <div className='product'>
+          <img src={ item.image }  alt="" />
           <div>
-              <h3>Apple Iphone 13 Mini 128GB Midnight</h3>
-              <h4>S/3,999</h4>
-              <p className='stock'>(Stock: 57)</p>
-              <p>APPLE - SMARTWATCH</p>
+              <h3>{ item.productName }</h3>
+              <h4>S/{ priceFormat(item.price) }</h4>
+              <p className='stock'>(Stock: { item.stock })</p>
+              <p>{ item.description }</p>
           </div>
           <ItemCount className = 'itemCount' amount = "57"></ItemCount>
-      </div>
+        </div>
+      ):(
+        <h1>Cargando...</h1>
+      )}
+      
     </div>
   )
 }
