@@ -1,5 +1,5 @@
 import './ItemList.css'
-import React from 'react'
+import React, { useEffect } from 'react'
 import Item from '../Item/Item'
 
 const ItemList = ({ productList }) => {
@@ -17,6 +17,7 @@ const ItemList = ({ productList }) => {
                         price = {element.price}
                         stock = {element.stock}
                         description = {element.description}
+                        id = {element.id}
                         />
                     </div>
                 ))

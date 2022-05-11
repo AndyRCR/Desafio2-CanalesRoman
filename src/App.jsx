@@ -1,13 +1,10 @@
-import './App.css'
-import NavBar from './components/NavBar/NabBar'
-import ItemListContainer from './components/ItemListContainer/ItemListContainer'
+import Rutas from './routes/Rutas'
 
 function App() {
   return (
-    <div className="App">
-      <NavBar/>
-      <ItemListContainer />
-    </div>
+    <>
+      <Rutas/>
+    </>
   )
 }
 
