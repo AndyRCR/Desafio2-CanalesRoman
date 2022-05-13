@@ -1,7 +1,13 @@
 import React, {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import ItemDetail from '../ItemDetail/ItemDetail'
-import './ItemDetailContainer.css'
+
+const itemDetailContainer = {
+  height: '100%',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center'
+}
 
 const ItemDetailContainer = (props) => {
   const [productList, setProductList] = useState(null)
@@ -16,7 +22,7 @@ const ItemDetailContainer = (props) => {
   }, [])
   
   return (
-    <div className='itemDetailContainer'>
+    <div className='itemDetailContainer' style={itemDetailContainer}>
         {productList != null ? (
           productList.filter(e => e.id == id).map(e => (
             <ItemDetail

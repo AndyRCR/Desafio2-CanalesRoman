@@ -2,6 +2,7 @@ import './ItemListContainer.css'
 import React, {useState, useEffect} from 'react'
 import ItemList from '../ItemList/ItemList'
 import Filter from '../Filter/Filter'
+// import styled from 'styled-components'
 
 const ItemListContainer = (props) => {
   const [productList, setProductList] = useState(null)
