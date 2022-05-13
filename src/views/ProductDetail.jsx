@@ -9,7 +9,6 @@ const productDetailContainer = {
 
 const ProductDetail = () => {
 
-
   return (
     <div className="productDetailContainer" style={productDetailContainer}>
       <ItemDetailContainer/>

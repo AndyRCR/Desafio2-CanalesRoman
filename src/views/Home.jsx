@@ -1,6 +1,5 @@
 import React from 'react'
 import ItemListContainer from '../components/ItemListContainer/ItemListContainer'
-import NavBar from '../components/NavBar/NabBar'
 
 const homeContainer = {
     height: '100vh',

@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import ItemListContainer from '../components/ItemListContainer/ItemListContainer'
-import NavBar from '../components/NavBar/NabBar'
 
 const filteredProductsContainer = {
     height: '100vh',
