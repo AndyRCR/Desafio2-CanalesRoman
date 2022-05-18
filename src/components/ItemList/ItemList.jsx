@@ -1,5 +1,5 @@
 import './ItemList.css'
-import React, { useEffect } from 'react'
+import React from 'react'
 import Item from '../Item/Item'
 
 const ItemList = ({ productList }) => {
@@ -12,12 +12,7 @@ const ItemList = ({ productList }) => {
                     <div key={'container' + element.id} className='itemFlexContainer'>
                         <Item
                         key = {element.id}
-                        image = {element.image}
-                        product = {element.productName}
-                        price = {element.price}
-                        stock = {element.stock}
-                        description = {element.description}
-                        id = {element.id}
+                        product = {element}
                         />
                     </div>
                 ))

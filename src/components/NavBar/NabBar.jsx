@@ -14,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import CardWidget from '../CardWidget/CardWidget';
 import './NavBar.css'
 
-const pages = ['Category 1', 'Category 2', 'Category 3'];
+const pages = [];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const NavBar = () => {
@@ -41,7 +41,7 @@ const NavBar = () => {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography variant="h6" noWrap component="div" sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }} >
-            TIENDA PE'
+            Tienda Pe'
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>

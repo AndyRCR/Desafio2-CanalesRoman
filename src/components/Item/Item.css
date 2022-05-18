@@ -9,7 +9,7 @@
 }
 
 .product{
-    padding: 30px;
+    padding: 30px 30px;
 }
 
 .itemCount{
@@ -28,7 +28,8 @@ h3, h4{
 
 img{
     backface-visibility: hidden;
-    height: 160px;
+    width: 95%;
+    max-height: 250px;
 }
 
 .item:hover{
