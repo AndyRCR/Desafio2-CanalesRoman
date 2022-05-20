@@ -3,7 +3,7 @@ import React, { createContext, useState } from 'react'
 export const GlobalContext = createContext('')
 
 const GlobalStateContext = ({children}) => {
-
+    const [productList, setProductList] = useState(null)
     const [cartProducts, setCartProducts] = useState([])
 
     const addToCart = (product) => {
@@ -23,7 +23,7 @@ const GlobalStateContext = ({children}) => {
     const clear = () => setCartProducts([])
 
   return (
-    <GlobalContext.Provider value={{cartProducts, addToCart, removeItem, clear}}>
+    <GlobalContext.Provider value={{cartProducts, addToCart, removeItem, clear, productList, setProductList}}>
         { children }
     </GlobalContext.Provider>
   )

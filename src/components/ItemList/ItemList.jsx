@@ -1,6 +1,8 @@
 import './ItemList.css'
 import React from 'react'
 import Item from '../Item/Item'
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
 
 const ItemList = ({ productList }) => {
 
@@ -17,9 +19,9 @@ const ItemList = ({ productList }) => {
                     </div>
                 ))
             ) : (
-                <h1 className='loadingContainer'>
-                    Cargando...
-                </h1>
+                <Box sx={{ display: 'flex', height: '100%', justifyContent: 'center', alignItems: 'center', gridColumn: '1/5' }}>
+                    <CircularProgress />
+                </Box>
             )}
         </div>
     </>

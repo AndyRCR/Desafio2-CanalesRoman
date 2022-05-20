@@ -111,7 +111,7 @@ const ItemDetail = ({ item, customStyle }) => {
       {item != null ? (
         <div className='product' style={product}>
           <div className='div1' style={div1}>
-            <img src={item.image} style={img} />
+            <img src={item.image} alt="" style={img} />
           </div>
           <div className='div2' style={div2}>
             <div style={details}>
@@ -132,7 +132,7 @@ const ItemDetail = ({ item, customStyle }) => {
                 en {item.categoria.slice(0, 1).toUpperCase() + item.categoria.slice(1, item.categoria.length)}
               </div>
               <div style={beforePrice}>
-                S/{priceFormat((item.price * 1.15).toFixed(0))}
+                S/{priceFormat(parseInt(item.price * 1.15))}
               </div>
               <div style={priceContainer}>
                 <div style={price}>

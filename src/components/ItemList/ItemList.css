@@ -1,4 +1,5 @@
 .itemList{
+    min-height: 300px;
     display: grid;
     grid-template-rows: auto;
     grid-template-columns: repeat(4,25%);
