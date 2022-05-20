@@ -30,7 +30,7 @@ const ItemCount = ({product, amount}) => {
       return () => {
         
       }
-    }, [stock,])
+    }, [product,stock])
     
 
     const increaseAmount = () => stock < amount ? setStock(stock + 1) : setStock(stock)
@@ -57,7 +57,10 @@ const ItemCount = ({product, amount}) => {
             ) : (
                 <div className='generalContainer'>
                     <Button
-                    onClick={() => setToCart(!toCart)}
+                    onClick={() => {
+                        addToCart(cartProduct)
+                        setToCart(!toCart)
+                    }}
                     className='addButton'
                     component={Link}
                     to={'/'}
