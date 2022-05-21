@@ -26,13 +26,9 @@ const h3 = {
 const Filter = () => {
   const {productName, setProductName, category, setCategory} = useContext(GlobalContext)
 
-  const handleChange = (event) => {
-    setCategory(event.target.value)
-  }
+  const handleChange = (event) => setCategory(event.target.value)
 
-  const handleProductName = (event) =>{
-    setProductName(event.target.value)
-  }
+  const handleProductName = (event) => setProductName(event.target.value)
 
   return (
     <>
