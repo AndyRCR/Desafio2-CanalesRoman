@@ -11,10 +11,9 @@ const filterContainer = {
   display: 'flex',
   flexDirection: 'column',
   padding: '20px',
-  marginTop: '20px'
-}
-
-const formControl = { 
+  margin: '20px',
+  backgroundColor: 'white',
+  borderRadius: '20px'
 }
 
 const h3 = {
@@ -33,8 +32,8 @@ const Filter = () => {
     <>
       <div className='filterContainer' style={filterContainer}>
         <h3 style={h3}>Filtrar:</h3>
-        <FormControl fullWidth style={formControl}>
-          <InputLabel id="categoryLabel" style={formControl}>Categoría</InputLabel>
+        <FormControl fullWidth>
+          <InputLabel id="categoryLabel">Categoría</InputLabel>
           <Select
             labelId="categoryLabel"
             id="categorySelect"

@@ -40,8 +40,8 @@ const NavBar = () => {
   };
 
   return (
-    <AppBar position="fixed">
-      <Container maxWidth="xl">
+    <AppBar position="fixed" style={{backgroundColor: 'transparent', boxShadow: 'none'}}>
+      <Container style={{backgroundColor: '#121212', borderBottomLeftRadius: '25px', borderBottomRightRadius: '25px', maxWidth: '97%'}}>
         <Toolbar disableGutters>
           <Typography variant="h6" noWrap component="div" sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }} >
             <Link onClick={() => setToCart(false)} to={'/'} style={{color: 'white', textDecoration: 'none'}}>La Tienda Pe'</Link>
