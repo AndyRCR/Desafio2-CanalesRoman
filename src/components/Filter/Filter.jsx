@@ -1,9 +1,11 @@
-import React from 'react'
+import React, {useContext, useState} from 'react'
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import {Link} from 'react-router-dom'
+import { GlobalContext } from '../../context/GlobalStateContext';
+import { TextField } from '@mui/material';
 
 const filterContainer = {
   width: '20%',
@@ -22,10 +24,14 @@ const h3 = {
 }
 
 const Filter = () => {
-  const [category, setCategory] = React.useState('')
+  const {productName, setProductName, category, setCategory} = useContext(GlobalContext)
 
   const handleChange = (event) => {
     setCategory(event.target.value)
+  }
+
+  const handleProductName = (event) =>{
+    setProductName(event.target.value)
   }
 
   return (
@@ -50,6 +56,17 @@ const Filter = () => {
             <MenuItem component={Link} to='/category/moviles' value={'moviles'}>Moviles</MenuItem>
             <MenuItem component={Link} to='/category/televisores' value={'televisores'}>Televisores</MenuItem>
           </Select>
+        </FormControl>
+
+        <FormControl fullWidth>
+          <TextField
+          id="productInput"
+          name='productName'
+          label="Filtrar por nombre"
+          value={productName}
+          onChange={handleProductName}
+          style={{backgroundColor: 'white', marginTop: '20px'}}
+          />
         </FormControl>
       </div>
     </>

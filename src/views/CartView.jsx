@@ -6,8 +6,8 @@ const CartView = () => {
 
   return (
     <>
-      <Cart></Cart>
-      <Form></Form>
+      <Cart />
+      <Form />
     </>
   )
 }

@@ -8,6 +8,7 @@ import { doc, getDoc } from 'firebase/firestore'
 const itemDetailContainer = {
   display: 'flex',
   justifyContent: 'center',
+  height: '100%'
 }
 
 const ItemDetailContainer = (props) => {
