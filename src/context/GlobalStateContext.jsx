@@ -11,6 +11,8 @@ const GlobalStateContext = ({children}) => {
     const [toCart, setToCart] = useState(false)
     const [category, setCategory] = useState('')
     const [productName, setProductName] = useState('')
+    const [minPrice, setMinPrice] = useState(0)
+    const [maxPrice, setMaxPrice] = useState(Number.MAX_VALUE)
 
     const addToCart = (product) => {
       if(isInCart(product.id)){
@@ -55,7 +57,11 @@ const GlobalStateContext = ({children}) => {
       category,
       setCategory,
       productName,
-      setProductName
+      setProductName,
+      minPrice,
+      setMinPrice,
+      maxPrice,
+      setMaxPrice
       }}>
         { children }
     </GlobalContext.Provider>

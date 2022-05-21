@@ -9,14 +9,16 @@ import { useParams } from 'react-router-dom'
 
 const ItemListContainer = (props) => {
   const {category} = useParams()
-  const {productList, setProductList, productName} = useContext(GlobalContext)
+  const {productList, setProductList, productName, minPrice, maxPrice} = useContext(GlobalContext)
 
   const getData = async () =>{
     const col = collection(db, 'products')
     try {
       const data = category === undefined ? await getDocs(col) : await getDocs(query(col, where('categoria', '==', category)))
       const res = data.docs.map(doc => doc = {id: doc.id, ...doc.data()} )
-      setProductList(res.filter(product => product.productName.toLowerCase().includes(productName.toLowerCase())))
+      setProductList(res.filter(product => {
+        return product.productName.toLowerCase().includes(productName.toLowerCase()) && minPrice <= product.price && product.price <= maxPrice
+      }))
     } catch (error) {
       console.log(error)
     }
@@ -28,7 +30,7 @@ const ItemListContainer = (props) => {
 
     return () => {
     }
-  }, [category, productName])
+  }, [category, productName, minPrice, maxPrice])
 
   return (
     <>
