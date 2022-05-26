@@ -16,7 +16,7 @@ const Rutas = () => {
                 <Route path='/category/:category' element={<FilteredProducts/>}/>
                 <Route path='/item/:id' element={<ProductDetail/>}></Route>
                 <Route path='/cart' element={<CartView/>} />
-            </Route> 
+            </Route>
         </Routes>
     </BrowserRouter>
     </>

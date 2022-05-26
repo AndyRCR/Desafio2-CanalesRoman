@@ -22,6 +22,7 @@ const ItemCount = ({product, amount}) => {
             id: product.id,
             name: product.productName,
             img: product.image,
+            individualPrice: product.price,
             price: product.price * stock,
             amount: stock,
             description: product.description

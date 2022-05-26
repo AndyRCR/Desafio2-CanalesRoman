@@ -4,7 +4,8 @@ import ItemListContainer from '../components/ItemListContainer/ItemListContainer
 const homeContainer = {
     height: '100vh',
     textAlign: 'center',
-    backgroundColor: '#F5F5F5'
+    backgroundColor: '#F5F5F5',
+    marginTop: '60px'
 }
 
 const Home = () => {

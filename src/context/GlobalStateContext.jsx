@@ -44,12 +44,14 @@ const GlobalStateContext = ({children}) => {
   return (
     <GlobalContext.Provider value={{
       cartProducts,
+      setCartProducts,
       addToCart,
       removeItem,
       clear,
       productList,
       setProductList,
       totalPrice,
+      setTotalPrice,
       toCart,
       setToCart,
       currentItem,

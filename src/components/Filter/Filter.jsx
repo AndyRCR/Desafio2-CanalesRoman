@@ -1,26 +1,29 @@
 import React, {useContext, useEffect, useState} from 'react'
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem'
+import FormControl from '@mui/material/FormControl'
+import Select from '@mui/material/Select'
 import {Link} from 'react-router-dom'
-import { GlobalContext } from '../../context/GlobalStateContext';
-import { Box, FormHelperText, TextField } from '@mui/material';
+import { GlobalContext } from '../../context/GlobalStateContext'
+import { Box, FormHelperText, TextField } from '@mui/material'
 
 const filterContainer = {
   width: '20%',
- height: '100vh',
+  height: '50vh',
   display: 'flex',
   flexDirection: 'column',
-  padding: '20px',
+  padding: '0 20px',
   margin: '20px',
   backgroundColor: 'white',
   borderRadius: '20px'
 }
 
-const h3 = {
-  textAlign: 'left',
+const h2 = {
+  textAlign: 'center',
   marginBottom: '20px'
+}
+
+const h3 = {
+  textAlign: 'left'
 }
 
 const Filter = () => {
@@ -29,41 +32,32 @@ const Filter = () => {
     category, setCategory,
     minVal, maxVal,
     minPrice, setMinPrice,
-    maxPrice, setMaxPrice} = useContext(GlobalContext)
+    maxPrice, setMaxPrice
+  } = useContext(GlobalContext)
 
   const [validPrice, setValidPrice] = useState(true)
 
   const handleChange = (event) => setCategory(event.target.value)
-
   const handleProductName = (event) => setProductName(event.target.value)
-
   const handleMaxPrice = (event) => setMaxPrice(event.target.value === "" ? Number.MAX_VALUE : parseFloat(event.target.value))
-
   const handleMinPrice = (event) => setMinPrice(event.target.value === "" ? 0 : parseFloat(event.target.value))
-
   const handleValidPrice = () => setValidPrice( minPrice <= maxPrice ? true : false )
 
   useEffect(() => {
     handleValidPrice()
-
-    return () => {
-      
-    }
   }, [minPrice,maxPrice])
   
-
   return (
     <>
       <div className='filterContainer' style={filterContainer}>
-        <h3 style={h3}>Filtrar:</h3>
+        <h2 style={h2}>Filtros</h2>
         <FormControl fullWidth>
-          <InputLabel id="categoryLabel">Categoría</InputLabel>
+          <h3 style={h3}>Filtrar por categoría:</h3>
           <Select
-            labelId="categoryLabel"
             id="categorySelect"
             value={category}
-            label="category"
             onChange={handleChange}
+            style={{marginTop: '10px'}}
           >
             <MenuItem component={Link} to='/' value={'*'}>Todas las categorías</MenuItem>
             <MenuItem component={Link} to='/category/accesorios' value={'accesorios'}>Accesorios</MenuItem>
@@ -76,20 +70,22 @@ const Filter = () => {
           </Select>
         </FormControl>
 
-        <FormControl fullWidth>
+        <FormControl style={{marginTop: '20px'}} fullWidth>
+          <h3 style={h3}>Filtrar por nombre:</h3>
           <TextField
           id="productInput"
           name='productName'
-          label="Filtrar por nombre"
+          label="Nombre"
           autoComplete='off'
           value={productName}
           onChange={handleProductName}
-          style={{backgroundColor: 'white', marginTop: '20px'}}
+          style={{marginTop: '10px'}}
           />
         </FormControl>
 
         <div style={{display: 'flex', marginTop: '20px', flexDirection: 'column'}}>
-          <Box style={{display: 'flex'}}>
+          <h3 style={h3}>Filtrar por nombre:</h3>
+          <Box style={{display: 'flex', marginTop: '10px'}}>
             <Box display={'flex'} alignItems={'center'} marginX={'5px'}>
               <div>S/</div>
             </Box>
@@ -126,9 +122,7 @@ const Filter = () => {
               />
             </FormControl>
           </Box>
-
-          {!validPrice && <FormHelperText style={{color: 'red', textAlign: 'right'}}>Ingrese un filtro de precio valido</FormHelperText>}
-          
+          {!validPrice && <FormHelperText style={{color: 'red', textAlign: 'right'}}>Ingrese un rango de precio válido</FormHelperText>}
         </div>
       </div>
     </>
