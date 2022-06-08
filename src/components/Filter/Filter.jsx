@@ -5,26 +5,7 @@ import Select from '@mui/material/Select'
 import {Link} from 'react-router-dom'
 import { GlobalContext } from '../../context/GlobalStateContext'
 import { Box, FormHelperText, TextField } from '@mui/material'
-
-const filterContainer = {
-  width: '20%',
-  height: '50vh',
-  display: 'flex',
-  flexDirection: 'column',
-  padding: '0 20px',
-  margin: '20px',
-  backgroundColor: 'white',
-  borderRadius: '20px'
-}
-
-const h2 = {
-  textAlign: 'center',
-  marginBottom: '20px'
-}
-
-const h3 = {
-  textAlign: 'left'
-}
+import './Filter.css'
 
 const Filter = () => {
   const {
@@ -49,15 +30,15 @@ const Filter = () => {
   
   return (
     <>
-      <div className='filterContainer' style={filterContainer}>
-        <h2 style={h2}>Filtros</h2>
+      <div className='filterContainer'>
+        <h2 className='h2'>Filtros</h2>
         <FormControl fullWidth>
-          <h3 style={h3}>Filtrar por categoría:</h3>
+          <h3 className='h3'>Filtrar por categoría:</h3>
           <Select
-            id="categorySelect"
+            id='categorySelect'
             value={category}
             onChange={handleChange}
-            style={{marginTop: '10px'}}
+            className='select'
           >
             <MenuItem component={Link} to='/' value={'*'}>Todas las categorías</MenuItem>
             <MenuItem component={Link} to='/category/accesorios' value={'accesorios'}>Accesorios</MenuItem>
@@ -70,8 +51,8 @@ const Filter = () => {
           </Select>
         </FormControl>
 
-        <FormControl style={{marginTop: '20px'}} fullWidth>
-          <h3 style={h3}>Filtrar por nombre:</h3>
+        <FormControl className='formControl' fullWidth>
+          <h3 className='h3'>Filtrar por nombre:</h3>
           <TextField
           id="productInput"
           name='productName'
@@ -83,10 +64,10 @@ const Filter = () => {
           />
         </FormControl>
 
-        <div style={{display: 'flex', marginTop: '20px', flexDirection: 'column'}}>
-          <h3 style={h3}>Filtrar por nombre:</h3>
-          <Box style={{display: 'flex', marginTop: '10px'}}>
-            <Box display={'flex'} alignItems={'center'} marginX={'5px'}>
+        <div className='aditionalFiltersContainer'>
+          <h3 className='h3'>Filtrar por nombre:</h3>
+          <Box className='priceFilterContainer'>
+            <Box className='box'>
               <div>S/</div>
             </Box>
 
@@ -98,14 +79,13 @@ const Filter = () => {
             label="Precio min."
             value={minVal}
             onChange={handleMinPrice}
-            style={{backgroundColor: 'white'}}
             />
 
-            <Box display={'flex'} alignItems={'center'} marginX={'5px'}>
+            <Box className='box'>
               <div>-</div>
             </Box>
 
-            <Box display={'flex'} alignItems={'center'} marginX={'5px'}>
+            <Box className='box'>
               <div>S/</div>
             </Box>
 
@@ -118,7 +98,6 @@ const Filter = () => {
               label="Precio max."
               value={maxVal}
               onChange={handleMaxPrice}
-              style={{backgroundColor: 'white'}}
               />
             </FormControl>
           </Box>

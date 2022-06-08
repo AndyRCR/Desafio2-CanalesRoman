@@ -16,6 +16,7 @@ const img = {
 }
 
 const product = {
+  padding: '30px 30px',
   boxSizing: 'border-box',
   height: '100%',
   backgroundColor: '#fff',

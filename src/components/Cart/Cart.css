@@ -16,6 +16,11 @@
     overflow-y: overlay;
 }
 
+.cartContainer img{
+    width: 95%;
+    max-height: 250px;
+}
+
 /******************/
 
 .cartContainer .cartList::-webkit-scrollbar {
