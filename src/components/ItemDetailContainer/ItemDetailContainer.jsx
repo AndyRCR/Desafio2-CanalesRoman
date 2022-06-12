@@ -2,14 +2,9 @@ import React, {useContext, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import { GlobalContext } from '../../context/GlobalStateContext'
 import ItemDetail from '../ItemDetail/ItemDetail'
-import { db } from '../../service/firebase'
+import { db } from '../../service/Firebase'
 import { doc, getDoc } from 'firebase/firestore'
-
-const itemDetailContainer = {
-  display: 'flex',
-  justifyContent: 'center',
-  height: '100%'
-}
+import './ItemDetailContainer.css'
 
 const ItemDetailContainer = (props) => {
   const {currentItem, setCurrentItem} = useContext(GlobalContext)
@@ -32,9 +27,8 @@ const ItemDetailContainer = (props) => {
     }
   }, [])
   
-
   return (
-    <div className='itemDetailContainer' style={itemDetailContainer}>
+    <div className='itemDetailContainer'>
       <ItemDetail
       currentItem = {currentItem}
       />

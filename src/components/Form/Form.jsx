@@ -2,7 +2,7 @@ import { Button, FormControl, TextField } from '@mui/material'
 import { addDoc, collection } from 'firebase/firestore'
 import React, { useContext, useEffect, useState } from 'react'
 import { GlobalContext } from '../../context/GlobalStateContext'
-import { db } from '../../service/firebase'
+import { db } from '../../service/Firebase'
 import './Form.css'
 import Swal from 'sweetalert2'
 
