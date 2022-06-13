@@ -4,7 +4,7 @@ import FormControl from '@mui/material/FormControl'
 import Select from '@mui/material/Select'
 import {Link} from 'react-router-dom'
 import { GlobalContext } from '../../context/GlobalStateContext'
-import { Box, FormHelperText, Pagination, TextField } from '@mui/material'
+import { Box, FormHelperText, TextField } from '@mui/material'
 import './Filter.css'
 
 const Filter = () => {
@@ -106,11 +106,6 @@ const Filter = () => {
           </Box>
           {!validPrice && <FormHelperText style={{color: 'red', textAlign: 'right'}}>Ingrese un rango de precio válido</FormHelperText>}
         </div>
-
-        <FormControl className='formControl' fullWidth>
-          <h3 className='h3'>Página:</h3>
-          <Pagination count={10} color='primary' style={{marginTop: '10px'}}/>
-        </FormControl>
       </div>
     </>
   )

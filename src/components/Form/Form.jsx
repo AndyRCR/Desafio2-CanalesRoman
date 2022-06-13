@@ -66,15 +66,13 @@ const Form = () => {
           'success'
         )
 
-        let list =  ''
-        for(let i = 0; i<formValue.items.length; i++){
-          list += `${i+1}.- ${formValue.items[i].name} | ${formValue.items[i].description} | x${formValue.items[i].amount}UN. | Sub-total: S/${formValue.items[i].price}
-          `
-        }
+        let list =  {}
+        for(let i = 0; i<formValue.items.length; i++) list[`producto${i}`] = `${i+1}.- ${formValue.items[i].name} | ${formValue.items[i].description} | x${formValue.items[i].amount}UN. | Sub-total: S/${formValue.items[i].price}`
 
-        emailjs.send('service_4gfz4ub', 'template_qnjdn25', {...formValue, list})
+        emailjs.send('service_4gfz4ub', 'template_qnjdn25', {...formValue, ...list, order: order.id})
           .then(function (response) {
             console.log('SUCCESS!', response.status, response.text)
+            console.log({...formValue, ...list})
           }, function (error) {
             console.log('FAILED...', error)
           })
