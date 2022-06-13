@@ -23,29 +23,29 @@
 
 /******************/
 
-.cartContainer .cartList::-webkit-scrollbar {
+*::-webkit-scrollbar {
     -webkit-appearance: none;
 }
 
-.cartContainer .cartList::-webkit-scrollbar:vertical {
+*::-webkit-scrollbar:vertical {
     width:10px;
 }
 
-.cartContainer .cartList::-webkit-scrollbar-button:increment,.contenedor::-webkit-scrollbar-button {
+*::-webkit-scrollbar-button:increment,.contenedor::-webkit-scrollbar-button {
     display: none;
 } 
 
-.cartContainer .cartList::-webkit-scrollbar:horizontal {
+*::-webkit-scrollbar:horizontal {
     height: 10px;
 }
 
-.cartContainer .cartList::-webkit-scrollbar-thumb {
-    background-color: #797979;
+*::-webkit-scrollbar-thumb {
+    background-color: #7A297B; 
     border-radius: 20px;
-    border: 2px solid #f1f2f3;
+    border: 2px solid #511252;
 }
 
-.cartContainer .cartList::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
     border-radius: 10px;  
 }
 

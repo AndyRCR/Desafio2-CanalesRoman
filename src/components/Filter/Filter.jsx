@@ -4,7 +4,7 @@ import FormControl from '@mui/material/FormControl'
 import Select from '@mui/material/Select'
 import {Link} from 'react-router-dom'
 import { GlobalContext } from '../../context/GlobalStateContext'
-import { Box, FormHelperText, TextField } from '@mui/material'
+import { Box, FormHelperText, Pagination, TextField } from '@mui/material'
 import './Filter.css'
 
 const Filter = () => {
@@ -39,6 +39,7 @@ const Filter = () => {
             value={category}
             onChange={handleChange}
             className='select'
+            style={{marginTop: '10px', backgroundColor: 'white', borderRadius: '5px'}}
           >
             <MenuItem component={Link} to='/' value={'*'}>Todas las categorías</MenuItem>
             <MenuItem component={Link} to='/category/accesorios' value={'accesorios'}>Accesorios</MenuItem>
@@ -56,11 +57,11 @@ const Filter = () => {
           <TextField
           id="productInput"
           name='productName'
-          label="Nombre"
+          placeholder="Nombre del producto"
           autoComplete='off'
           value={productName}
           onChange={handleProductName}
-          style={{marginTop: '10px'}}
+          style={{marginTop: '10px', backgroundColor: 'white', borderRadius: '5px'}}
           />
         </FormControl>
 
@@ -76,9 +77,10 @@ const Filter = () => {
             InputProps={{ inputProps: { min: 0 } }}
             id="maxPriceInput"
             name='maxPrice'
-            label="Precio min."
+            placeholder="Precio min."
             value={minVal}
             onChange={handleMinPrice}
+            style={{backgroundColor: 'white', borderRadius: '5px'}}
             />
 
             <Box className='box'>
@@ -91,18 +93,24 @@ const Filter = () => {
 
             <FormControl>
               <TextField
-              type={'number'}
+              type='number'
               InputProps={{ inputProps: { min: 1 } }}
               id="minPriceInput"
               name='minPrice'
-              label="Precio max."
+              placeholder="Precio max."
               value={maxVal}
               onChange={handleMaxPrice}
+              style={{backgroundColor: 'white', borderRadius: '5px'}}
               />
             </FormControl>
           </Box>
           {!validPrice && <FormHelperText style={{color: 'red', textAlign: 'right'}}>Ingrese un rango de precio válido</FormHelperText>}
         </div>
+
+        <FormControl className='formControl' fullWidth>
+          <h3 className='h3'>Página:</h3>
+          <Pagination count={10} color='primary' style={{marginTop: '10px'}}/>
+        </FormControl>
       </div>
     </>
   )
