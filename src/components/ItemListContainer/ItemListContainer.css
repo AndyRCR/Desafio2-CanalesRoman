@@ -16,10 +16,6 @@
     backdrop-filter: blur(10px);
 }
 
-.itemListContainer a{
-    background-color: #331279 !important;
-}
-
 .itemListContainer img{
     min-width: 240px;
     max-width: 240px;
