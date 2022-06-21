@@ -11,7 +11,7 @@ const Form = () => {
 
   emailjs.init("uf1ocX0CxNZspgi0V")
 
-  const { cartProducts, setCartProducts, totalPrice, setTotalPrice } = useContext(GlobalContext)
+  const { cartProducts, setCartProducts, totalPrice, setTotalPrice, setInitialAmount } = useContext(GlobalContext)
   const [phoneStatus, setPhoneStatus] = useState(false)
   const [emailStatus, setEmailStatus] = useState(false)
   const [nameStatus, setNameStatus] = useState(false)
@@ -42,13 +42,16 @@ const Form = () => {
     if (e.target.name === 'phone') {
       setPhoneStatus(e.target.value.length < 1 ? false : true)
       setFormStatus(phoneStatus && emailStatus && nameStatus && lastNameStatus)
-    } else if (e.target.name === 'name') {
+    }
+    if (e.target.name === 'name') {
       setNameStatus(e.target.value.length < 1 ? false : true)
       setFormStatus(phoneStatus && emailStatus && nameStatus && lastNameStatus)
-    } else if (e.target.name === 'lastName') {
+    }
+    if (e.target.name === 'lastName') {
       setLastNameStatus(e.target.value.length < 1 ? false : true)
       setFormStatus(phoneStatus && emailStatus && nameStatus && lastNameStatus)
-    } else if (e.target.name === 'email') {
+    }
+    if (e.target.name === 'email') {
       setEmailStatus(e.target.value.length < 1 ? false : true)
       setFormStatus(phoneStatus && emailStatus && nameStatus && lastNameStatus)
     }
@@ -86,15 +89,16 @@ const Form = () => {
             email: "",
             phone: "",
           },
-          items: cartProducts,
-          date: new Date().getDate() + '/' + new Date().getMonth() + '/' + new Date().getFullYear(),
-          totalPrice: totalPrice
+          items: "",
+          date: "",
+          totalPrice: ""
         })
         setNameStatus(false)
         setLastNameStatus(false)
         setPhoneStatus(false)
         setEmailStatus(false)
         setFormStatus(false)
+        setInitialAmount(0)
       } else {
         Swal.fire({
           icon: 'error',

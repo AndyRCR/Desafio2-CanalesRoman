@@ -7,6 +7,7 @@ const GlobalStateContext = ({children}) => {
     const [productList, setProductList] = useState(null)
     const [currentItem, setCurrentItem] = useState(null)
     const [cartProducts, setCartProducts] = useState([])
+    const [initialAmount, setInitialAmount] = useState(0)
     const [totalPrice, setTotalPrice] = useState(0)
     const [toCart, setToCart] = useState(false)
     const [category, setCategory] = useState('')
@@ -63,7 +64,9 @@ const GlobalStateContext = ({children}) => {
       minPrice,
       setMinPrice,
       maxPrice,
-      setMaxPrice
+      setMaxPrice,
+      initialAmount,
+      setInitialAmount
       }}>
         { children }
     </GlobalContext.Provider>

@@ -5,7 +5,7 @@ import { GlobalContext } from '../../context/GlobalStateContext'
 import './ItemCount.css'
 
 const ItemCount = ({product, amount}) => {
-    const {addToCart, toCart, setToCart} = useContext(GlobalContext)
+    const {addToCart, toCart, setToCart, setInitialAmount, initialAmount} = useContext(GlobalContext)
 
     const [stock, setStock] = useState(1)
     const [cartProduct, setCartProduct] = useState({
@@ -47,7 +47,10 @@ const ItemCount = ({product, amount}) => {
                     <button className='countButton' onClick={increaseAmount}>+</button>
                 </div>
                 <Button
-                onClick={() => setToCart(!toCart)}
+                onClick={() => {
+                    setToCart(!toCart)
+                    setInitialAmount(initialAmount+stock)
+                }}
                 className='addButton'
                 variant='contained'
                 size='large'

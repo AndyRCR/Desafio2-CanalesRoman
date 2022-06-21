@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom';
 
 const NavBar = () => {
   const {setToCart} = useContext(GlobalContext)
-
+  
   return (
     <AppBar position="fixed" style={{backgroundColor: 'transparent', boxShadow: 'none', padding: '0 20px'}}>
       <Container style={{backgroundColor: '#331279', borderBottomLeftRadius: '25px', borderBottomRightRadius: '25px', maxWidth: '100%'}}>
