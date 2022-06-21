@@ -3,3 +3,15 @@
     justify-content: center;
     height: 100%;
 }
+
+@media (max-width: 800px){
+    .itemDetailContainer{
+        height: auto;
+    }
+}
+
+@media (max-height: 900px){
+    .itemDetailContainer{
+        height: auto;
+    }
+}

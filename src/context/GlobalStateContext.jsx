@@ -40,6 +40,7 @@ const GlobalStateContext = ({children}) => {
     const clear = () => {
       setTotalPrice(0)
       setCartProducts([])
+      setInitialAmount(0)
     }
 
   return (

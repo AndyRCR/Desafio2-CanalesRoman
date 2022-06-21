@@ -13,7 +13,7 @@ const CartView = () => {
 
   return (
     <div className='cartViewContainer' style={cartViewContainer}>
-      <div style={{display: 'flex', width: '100%'}}>
+      <div className='cartViewFlexContainer' style={{display: 'flex', width: '100%'}}>
         <Cart />
         <Form />
       </div>

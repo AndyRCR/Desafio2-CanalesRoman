@@ -20,16 +20,7 @@ const NavBar = () => {
         <Toolbar disableGutters style={{justifyContent: 'space-between'}}>
           <div></div>
 
-          <Typography variant="h6" noWrap component="div" sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }} >
-            <Link onClick={() => setToCart(false)} to={'/'} style={{color: 'white', textDecoration: 'none'}}>La Tienda Pe'</Link>
-          </Typography>
-
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
-          >
+          <Typography variant="h6" noWrap component="div" sx={{ mr: 2, display: { md: 'flex' } }} >
             <Link onClick={() => setToCart(false)} to={'/'} style={{color: 'white', textDecoration: 'none'}}>La Tienda Pe'</Link>
           </Typography>
 

@@ -1,7 +1,5 @@
 .generalContainer{
     margin: 15px;
-    display: inline-flex;
-    width: 30%;
     flex-direction: column;
     align-items: center;
 }
@@ -32,8 +30,6 @@ button{
     border-radius: 5px;
     transition: 0.2s;
 }
-
-
 
 .stockContainer{
     display: flex;
