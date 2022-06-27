@@ -48,6 +48,7 @@ const ItemCount = ({product, amount}) => {
                 </div>
                 <Button
                 onClick={() => {
+                    addToCart(cartProduct)
                     setToCart(!toCart)
                     setInitialAmount(initialAmount+stock)
                 }}
@@ -62,10 +63,7 @@ const ItemCount = ({product, amount}) => {
             ) : (
                 <div className='generalContainer'>
                     <Button
-                    onClick={() => {
-                        addToCart(cartProduct)
-                        setToCart(!toCart)
-                    }}
+                    onClick={() => setToCart(!toCart)}
                     className='addButton'
                     component={Link}
                     to={'/'}
@@ -77,10 +75,7 @@ const ItemCount = ({product, amount}) => {
                     Seguir comprando
                     </Button>
                     <Button
-                    onClick={() => {
-                        addToCart(cartProduct)
-                        setToCart(!toCart)
-                    }}
+                    onClick={() => setToCart(!toCart)}
                     className='addButton'
                     component={Link}
                     to={'/cart'}
